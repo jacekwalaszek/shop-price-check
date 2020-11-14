@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <title>Artykóły spożywcze | Porównywarka cen produktów sklepów spożywczych</title>
+    <title>Artykuły spożywcze | Porównywarka cen produktów sklepów spożywczych</title>
 </head>
+<style>
+    h1 {
+        display: inline-block;
+        margin-top: 50px;
+        max-width: 100%;
+        font-size: 50px;
+    }
+
+
+</style>
 <body>
     <header>
         <div class="logo">
@@ -23,9 +33,50 @@
         </div>
     </header>
     <main>
-        <aside class="banner"><img src="images/logo.jpg" alt="Nazwa"></aside>
         <article>
-
+            <h1>Artukuły spożywcze</h1> 
+            <section class="columns-desktop">
+                <div class="artykuly">
+                  <img src="images/artSpozywcze/delikatesyCentrum/tackaWłoszczyznaDC.png" alt="wloszczyzna" />
+                  <div class="columns">
+                      <div class="tytul">Tacka - Włoszczyzna</div>
+                      <div class="waga">tacka 500g</div>
+                      <div class="cena">3.49zł/tacka</div>
+                  </div>
+                  <p class="desc">Zamów towar w sklepie</p>
+                  <button data-order="wloszczyzna">Sklep</button>
+                </div>
+                <div class="artykuly">
+                    <img src="images/artSpozywcze/lidl/tackaWłoszczyznaL.png" alt="wloszczyzna" />
+                    <div class="columns">
+                        <div class="tytul">Tacka - Włoszczyzna</div>
+                        <div class="waga">pęczek 750g</div>
+                        <div class="cena">3.59zł/pęczek</div>
+                    </div>
+                    <p class="desc">Zamów towar w sklepie</p>
+                    <button data-order="wloszczyzna">Sklep</button>
+                  </div>
+                <div class="artykuly">
+                    <img src="images/artSpozywcze/delikatesyCentrum/kucharek200DC.png" alt="kucharek" />
+                    <div class="columns">
+                        <div class="tytul">Przyprawa Kucharek</div>
+                        <div class="waga">200g</div>
+                        <div class="cena">2.19zł/opak.</div>
+                    </div>
+                    <p class="desc">Zamów towar w sklepie</p>
+                    <button data-order="kucharek">Sklep</button>
+                  </div>
+                  <div class="artykuly">
+                    <img src="images/artSpozywcze/lidl/kucharek200L.png" alt="kucharek" />
+                    <div class="columns">
+                        <div class="tytul">Przyprawa Kucharek</div>
+                        <div class="waga">200g</div>
+                        <div class="cena">1.99zł/opak.</div>
+                    </div>
+                    <p class="desc">Zamów towar w sklepie</p>
+                    <button data-order="kucharek">Sklep</button>
+                  </div>
+            </section>
         </article>
     </main>
     <footer>

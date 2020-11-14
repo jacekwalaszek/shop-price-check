@@ -86,6 +86,10 @@ article {
     width: 75%;
 }
 
+.columns {
+    display: inline;
+}
+
 @media only screen and (min-width: 768px) {
 
     main {
@@ -95,4 +99,33 @@ article {
     aside   {
         margin-left: 2%;
     }
+
+    .columns-desktop {
+        display: flex;
+    }
+}
+
+/* artSpozywcze */
+
+.artykuly {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border: solid 1px lightblue;
+}
+
+.artykuly .tytul {
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+}
+.artykuly .waga {
+    padding-bottom: 5px;
+}
+
+div button {
+    background-color: lightblue;
+    border: solid 1px lightblue;
+    padding: 10px;
+    border-radius: 3px;
 }
