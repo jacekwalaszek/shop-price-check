@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <title>Alkohole | Porównywarka cen produktów sklepów spożywczych</title>
 </head>
+<style>
+    h1 {
+        display: inline-block;
+        margin-top: 50px;
+        max-width: 100%;
+        font-size: 50px;
+    }
+
+</style>
 <body>
     <header>
         <div class="logo">
@@ -23,9 +32,50 @@
         </div>
     </header>
     <main>
-        <aside class="banner"><img src="images/logo.jpg" alt="Nazwa"></aside>
         <article>
-            
+            <h1>Alkohole</h1> 
+            <section class="columns-desktop">
+                <div class="artykuly">
+                  <img src="images/alkohole/delikatesyCentrum/kasztelanDC.png" alt="kasztelan" />
+                  <div class="columns">
+                      <div class="tytul">Piwo Kasztelan Niepasteryzowane</div>
+                      <div class="waga">500ml</div>
+                      <div class="cena">2.95zł/puszka</div>
+                  </div>
+                  <p class="desc">Zamów towar w sklepie</p>
+                  <button data-order="kasztelan"><a href="http://delikatesy.pl">Sklep</a></button>
+                </div>
+                <div class="artykuly">
+                    <img src="images/alkohole/lidl/kasztelanL.png" alt="kasztelan" />
+                    <div class="columns">
+                        <div class="tytul">Kasztelan Niepasteryzowane</div>
+                        <div class="waga">500ml/1 pusz.</div>
+                        <div class="cena">1.99zł</div>
+                    </div>
+                    <p class="desc">Zamów towar w sklepie</p>
+                    <button data-order="kasztelan"><a href="http://lidl.pl">Sklep</a></button>
+                  </div>
+                <div class="artykuly">
+                    <img src="images/alkohole/delikatesyCentrum/zywiecDC.png" alt="zywiec" />
+                    <div class="columns">
+                        <div class="tytul">Piwo Żywiec</div>
+                        <div class="waga">500 ml</div>
+                        <div class="cena">3.49zł/puszka</div>
+                    </div>
+                    <p class="desc">Zamów towar w sklepie</p>
+                    <button data-order="zywiec"><a href="http://delikatesy.pl">Sklep</a></button>
+                  </div>
+                  <div class="artykuly">
+                    <img src="images/alkohole/lidl/zywiecL.png" alt="zywiec" />
+                    <div class="columns">
+                        <div class="tytul">Żywiec</div>
+                        <div class="waga">500ml/1 pusz.</div>
+                        <div class="cena">2.29zł</div>
+                    </div>
+                    <p class="desc">Zamów towar w sklepie</p>
+                    <button data-order="zywiec"><a href="http://lidl.pl">Sklep</a></button>
+                  </div>
+            </section>
         </article>
     </main>
     <footer>

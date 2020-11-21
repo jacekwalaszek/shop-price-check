@@ -6,7 +6,55 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <title>Kontakt | Porównywarka cen produktów sklepów spożywczych</title>
 </head>
+<style>
+    a {
+        color: black;
+    }
 
+    form {
+        margin-top: 25px;
+    }
+
+    
+
+     @media only screen and (min-width: 768px) {
+            article {
+                width: 350px;
+                ;
+            }
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            padding: 10px;
+            border: solid 1px #999;
+            border-radius: 2px;
+            width: 90%;
+        }
+
+        label {
+            font-weight:600;
+        }
+
+        input[type="reset"] {
+            background: transparent;
+            border: 0;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            border: solid 1px #999;
+            border-radius: 3px;
+            padding: 10px;
+        }
+</style>
 <body>
     <header>
         <div class="logo">
@@ -27,13 +75,79 @@
         <aside class="banner"><img src="images/logo.jpg" alt="Nazwa"></aside>
         <article>
             <h1>Kontakt</h1>
-            <p>Dziękujemy za kontakt z nami. Możecie się z nami skontaktować używając </p>
+            <p>Dziękujemy za kontakt z nami. Możecie się z nami skontaktować drogą meilową </p>
             <p>
                 <a href="mailto:test@nazwa.com?subject=Obsługa%20klienta.">test@nazwa.com</a>
-            <p>bądź pod numerem telefonu: 123 456 789</p>    
+                <p>pod naszym numerem telefonu: 123 456 789</p> 
+                <p>Bądź wyślij nam informacje uzupełniając dane poniżej:</p> 
             </p>
+            <form action="http://localhost:7071/api/post" method="POST">
+                <input type="hidden" id="pie-order" name="pie-order">
+                <input type="hidden" id="location" name="location">
+
+                <div class="input-group">
+                    <div><label for="first-name">Imię</label></div>
+                    <div><input type="text" name="first-name" id="first-name" /></div>
+                </div>
+
+                <div class="input-group">
+                    <div><label for="last-name">Nazwisko</label></div>
+                    <div><input type="text" name="last-name" id="last-name" /></div>
+                </div>
+
+                <div class="input-group">
+                    <div><label for="address">Adres</label></div>
+                    <div><input type="text" name="address" id="address" /></div>
+                </div>
+
+                <div class="input-group">
+                    <div><label for="address">Województwo</label></div>
+                                        <div>
+                        <select name="state" id="state">
+                            <option value="" selected>[ Select one ]</option>
+                            <option value="dolnośląskie">dolnośląskie</option>
+                            <option value="kujawsko-pomorskie">kujawsko-pomorskie</option>
+                            <option value="Lubelskie">lubelskie</option>
+                            <option value="lubuskie">lubuskie</option>
+                            <option value="łódzkie">łódzkie</option>
+                            <option value="małopolskie">małopolskie</option>
+                            <option value="mazowieckie">mazowieckie</option>
+                            <option value="opolskie">opolskie</option>
+                            <option value="podkarpackie">podkarpackie</option>
+                            <option value="podlaskie">podlaskie</option>
+                            <option value="pomorskie">pomorskie</option>
+                            <option value="śląskie">śląskie</option>
+                            <option value="świętokrzyskie">świętokrzyskie</option>
+                            <option value="warmińsko-mazurskie">warmińsko-mazurskie</option>
+                            <option value="wielkopolskie">wielkopolskie</option>
+                            <option value="zachodniopomorskie">zachodniopomorskie</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div><label for="postal-code">Kod pocztowy</label></div>
+                    <div><input type="text" name="postal-code" id="postal-code" /></div>
+                </div>
+
+                <div class="input-group">
+                    <div><label for="comments">Dane</label></div>
+                    <div>
+                        <textarea 
+                            name="comments" 
+                            id="comments" 
+                            cols="30" 
+                            rows="10"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <input type="reset" value="Reset" />
+                <input type="submit" value="Order" />
+            </form>
         </article>
-    </main>
+        </main>
     <footer>
         <nav>
             <ul>
@@ -41,5 +155,29 @@
             </ul>
         </nav>
     </footer>
+    <script>
+        window.addEventListener("DOMContentLoaded", function(e) {
+
+            let locationBox = document.querySelector("#location");
+
+            let location = {
+                latitude: "unknown",
+                longitude: "unknown"
+            };
+
+            window.navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    location = {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    };
+                    locationBox.value = JSON.stringify(location);
+                },
+                function(error) {
+                    locationBox.value = JSON.stringify(location);
+                }
+            );
+        });
+    </script>
 </body>
 </html>
